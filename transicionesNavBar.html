@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra de navegación</title>
+</head>
+<style>
+    ul{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+        color: white;
+    }
+    .menu{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .menu--cat{
+        background-color: black;
+        padding: 5px;
+        border-radius: 10px;
+
+    }
+    .menu--cat > ul {
+        position: absolute;
+        opacity: 0;
+        transition: opacity 400ms;
+        transition-delay: 300ms;
+    }
+    .menu--cat:hover > ul {
+        opacity: 1;
+        transition: opacity 100ms;
+        transition-delay: 1s;
+    }
+   .menu--cat--item{
+        position: relative;
+        display: none;
+       
+    }
+    .menu--subcat--general{
+        background-color: darkcyan;
+        border-radius: 15px;
+        position: absolute;
+        margin-top: 10px;
+        padding: 10px;
+    }
+
+
+    .menu--subcat:hover .menu--cat--item{
+        opacity: 1;
+        display: block;
+        transition: display 1ms;
+        transition-delay: 3s;
+    }
+   
+</style>
+<body>
+    <ul class="menu">
+        <li class="menu--cat"><a href="/">Frutas</a>
+            <ul class="menu--subcat--general">
+                <li class="menu--subcat"><a href="/">Dulces</a>
+                    <ul>
+                        <li class="menu--cat--item"><a href="/">Cambur</a></li>
+                        <li class="menu--cat--item"><a href="/">Lechosa</a></li>
+                        <li class="menu--cat--item"><a href="/">Melón</a></li>
+                        <li class="menu--cat--item"><a href="/">Nísperos</a></li>
+                    </ul>
+                    
+                </li>
+                <li class="menu--subcat"><a href="/">Citricas</a>
+                    <ul>
+                        <li class="menu--cat--item"><a href="/">Piña</a></li>
+                        <li class="menu--cat--item"><a href="/">Limón</a></li>
+                        <li class="menu--cat--item"><a href="/">Naranjas</a></li>
+                        <li class="menu--cat--item"><a href="/">Mandarinas</a></li>
+                    </ul>
+                  
+                </li>
+                
+            </ul>
+            
+        </li>
+
+        <li class="menu--cat"><a href="/">Verduras</a>
+        
+        </li>
+        <li class="menu--cat"><a href="/">Víveres</a>
+        
+        </li>
+        <li class="menu--cat"><a href="/">Detergentes</a>
+        
+        </li>
+    </ul>
+</body>
+</html>

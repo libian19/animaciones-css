@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efecto Parallax</title>
+</head>
+<style>
+    /*Fórmula para lograr el movimiento: 
+    p = perspective del container
+    z = traslate del elem en el eje Z
+    scale = (p-z)/z*/
+      .parallax-container{
+            position: relative;
+            width: 70vw;
+            height: 100vh;
+            perspective: 8px;
+            perspective-origin: 50%;
+            overflow-x: hidden;
+            overflow-y: scroll;
+
+        }
+        .img-background img{
+            position: absolute;
+            width:100%;
+            height: 100%;
+            transform: translateZ(0px) scale(1);
+            transform-origin: 0 50%;
+        }
+        .img-middle{
+            position: absolute;
+            width:100%;
+            height: 100%;
+            transform: translateZ(5px) scale(0.375);
+            transform-origin: 50%;
+        }
+
+        .img-foreground img{
+            position: absolute;
+            width:100%;
+            height: 100%;
+            transform: translateZ(2px) scale(0.25);
+            transform: rotate(10deg);
+            transform-origin: top;
+        }
+        .card{
+            position: absolute;
+            background: plum;
+            width: 80px;
+            height: 100px;
+            border-radius: 8px;
+            transform: rotate(20deg);
+        }
+        .one{
+            top: 5%;
+            left: 30%;
+
+        }
+        .two{
+            top: 300px;
+            right: 20%;
+        }
+        .three{
+            right: 40%;
+            bottom: -400px;
+        }
+        .img-ave img{
+            position: absolute;
+            margin-top: 50%;
+            width: 50%;
+            height: auto;
+            transform: translateZ(2px) scale(0.25);
+            transform: rotate(10deg);
+            transform-origin: bottom;
+        }
+</style>
+<body>
+    <div class="container--figure">
+        <h3>Valor: Efecto Parallax</h3>
+        <p>Efecto Parallax. Imágenes por capas con movimiento</p>
+        <div class="parallax-container">
+            <div class="img-background">
+                <img src="https://i.ibb.co/jbLKgvX/Background.png" alt="">
+            </div>
+
+            <div class="img-middle">
+                <div class="card one"></div>
+                <div class="card two"></div>
+                <div class="card three"></div>
+            </div>
+
+            <div class="img-foreground">
+                <img src="https://i.ibb.co/vJdbRkj/Alice.png" alt="">
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <div class="container--figure">
+        <h3>Valor: Efecto Parallax</h3>
+        <p>Efecto Parallax. Imágenes por capas con movimiento</p>
+        <div class="parallax-container">
+            <div class="img-background">
+                <img src="https://www.solofondos.com/wp-content/uploads/2015/12/Fondos-de-cielo.jpg" alt="">
+            </div>
+
+            <div class="img-ave">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>

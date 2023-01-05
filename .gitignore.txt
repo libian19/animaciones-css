@@ -1,0 +1,4 @@
+efectoParallax.html
+juegoAnimado.html
+transiciones.html
+transicionesNavBar.html
